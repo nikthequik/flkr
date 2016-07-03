@@ -13,14 +13,16 @@
 			<input type="text" ng-model="vm.searchTag" placeholder="Search Term" required autofocus>
 			<button>Submit</button>
 		</form>
-		<article id="message" ng-show="vm.notify" ng-cloak>
+		<article id="searching" ng-if="vm.searching" ng-cloak>
 			<h3>Searching Instagram for photos tagged with {{vm.currentTag}}</h3>
 		</article>
-	</section>
-	<section id="results" ng-show="vm.success" ng-cloak>
-		<article ng-repeat="photo in vm.results">
-			<img src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}.jpg" alt="{{photo.title}}" class="photo">
+		<article id="message" ng-if="vm.success" ng-cloak>
+			<h3>We found {{vm.results.length}}</h3>
 		</article>
+
+	</section>
+	<section id="results" ng-if="vm.success" ng-cloak>
+			<img ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}.jpg" alt="{{photo.title}}" class="photo" ng-repeat="photo in vm.results">
 	</section>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>

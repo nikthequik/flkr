@@ -7,3 +7,12 @@
 	font-size: 3em;
 	margin-top: 3em;
 }
+
+.photo {
+	display: inline;
+	margin-left: 2vw;
+	width: 30vw;
+	height: 35vh;
+	vertical-align: top;
+	margin-bottom: 1em;
+}
