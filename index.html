@@ -9,13 +9,17 @@
 	
 	<section id="container">
 		<h1>Flickr Searcher</h1>
-		<form ng-submit="">
-			<input type="text" placeholder="Search Term">
+		<form ng-submit="vm.exeSearch()" name="search">
+			<input type="text" ng-model="vm.searchTag" placeholder="Search Term" required>
 			<button>Submit</button>
 		</form>
+		<div id="message">
+			
+		</div>
 	</section>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script src="node_modules/requirejs/require.js"></script>
 	<script src="js/app.js"></script>
 </body>
 </html>

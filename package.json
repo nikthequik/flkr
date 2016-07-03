@@ -1,0 +1,23 @@
+{
+  "name": "flkr",
+  "version": "1.0.0",
+  "description": "search flickr",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikthequik/flkr.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nikthequik/flkr/issues"
+  },
+  "homepage": "https://github.com/nikthequik/flkr#readme",
+  "dependencies": {
+    "oauth": "^0.9.14"
+  },
+  "devDependencies": {}
+}
