@@ -8,11 +8,18 @@
 	margin-top: 3em;
 }
 
-.photo {
+.photo,
+.photo.ng-enter-stagger {
 	display: inline;
 	margin-left: 2vw;
 	width: 30vw;
 	height: 35vh;
 	vertical-align: top;
 	margin-bottom: 1em;
+	opacity: 1;
+}
+
+.photo.ng-enter-active-stagger {
+	transition-delay: 0.2s;
+	opacity: 1;
 }
