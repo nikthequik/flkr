@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/nikthequik/flkr#readme",
   "dependencies": {
+    "angular-animate": "^1.5.7",
     "oauth": "^0.9.14"
   },
   "devDependencies": {}
