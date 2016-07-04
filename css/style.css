@@ -17,13 +17,24 @@
 	margin-bottom: 1em;
 }
 
-.photo.ng-enter, .photo.ng-move {
-  transition: all 5s linear;
+.photo.ng-move,
+.photo.ng-enter {
+  -webkit-transition: all .5s ease-in;
+}
+
+.photo.ng-enter-stagger,
+.photo.ng-leave-stagger {
+	transition-delay: 0.4s;
+}
+
+.photo.ng-leave.ng-leave-active,
+.photo.ng-move,
+.photo.ng-enter {
   opacity: 0;
 }
 
-.photo.ng-enter.ng-enter-active, 
-.photo.ng-move.ng-move-active {
-	transition-delay: 1s;
+.photo.ng-enter.ng-enter-active,
+.photo.ng-move.ng-move-active,
+.photo.ng-leave.ng-leave.active {
 	opacity: 1;
 }

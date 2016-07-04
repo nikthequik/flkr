@@ -8,24 +8,28 @@
 <body ng-app="flkr" ng-controller="mainCtrl as vm">
 	
 	<section id="container">
+
 		<h1>Flickr Searcher</h1>
 		<form ng-submit="vm.exeSearch()" name="search">
 			<input type="text" ng-model="vm.searchTag" placeholder="Search Term" required autofocus>
 			<button>Submit</button>
 		</form>
+
 		<article id="searching" ng-if="vm.searching" ng-cloak>
 			<h3>Searching Instagram for photos tagged with "{{vm.currentTag}}"</h3>
 		</article>
 		<article id="message" ng-if="vm.success" ng-cloak>
 			<h3>We found {{vm.results.length}} results for "{{vm.currentTag}}"</h3>
 		</article>
-		<article id="message" ng-if="vm.noResults" ng-cloak>
+		<article id="no-results" ng-if="vm.noResults" ng-cloak>
 			<h3>Could not find any results for "{{vm.currentTag}}"</h3>
 		</article>
-
-
+		<article id="error" ng-if="vm.failure" ng-cloak>
+			<h3>Received the following error: </h3>
+			<p>{{vm.error}}</p>
+		</article>
 	</section>
-	<section id="results" ng-if="vm.success" ng-cloak>
+	<section id="results" ng-cloak>
 			<img ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}.jpg" alt="{{photo.title}}" class="photo" ng-repeat="photo in vm.results">
 	</section>
 

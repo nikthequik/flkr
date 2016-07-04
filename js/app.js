@@ -3,6 +3,7 @@ var app = angular.module("flkr", ['ngAnimate']);
 app.controller("mainCtrl", function($http, $scope, $q, $timeout){
 	var vm = this;
 	vm.exeSearch = function(){
+		vm.failure = false;
 		vm.searching = true;
 		vm.noResults = false;
 		vm.currentTag = vm.searchTag;
@@ -24,21 +25,23 @@ app.controller("mainCtrl", function($http, $scope, $q, $timeout){
 			params: params
 		})
 		.then(function(res){
-
-			vm.searching = false;
-			vm.results = res.data.photos.photo;
-			if (vm.results.length === 0) {
+			if (res.data.photos.photo.length === 0) {
 				vm.noResults = true;
 			}
 			else {
 				vm.success = true;
 			}
-			console.log(vm.results);
+			vm.searching = false;
+			vm.results = res.data.photos.photo;
+			/*console.log(res);*/
 		}, function(res){
-			console.log(res.error);
+			vm.failure = true;
+			vm.error = res.error;
 		});
 	};
 
+	vm.error = "";
+	vm.failure = false;
 	vm.noResults = false;
 	vm.results = [];
 	vm.searchTag = "";
