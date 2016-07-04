@@ -4,6 +4,7 @@ app.controller("mainCtrl", function($http, $scope, $q, $timeout){
 	var vm = this;
 	vm.exeSearch = function(){
 		vm.searching = true;
+		vm.noResults = false;
 		vm.currentTag = vm.searchTag;
 		vm.success = false;
 		getQuery();
@@ -23,16 +24,22 @@ app.controller("mainCtrl", function($http, $scope, $q, $timeout){
 			params: params
 		})
 		.then(function(res){
+
 			vm.searching = false;
 			vm.results = res.data.photos.photo;
-			vm.success = true;
+			if (vm.results.length === 0) {
+				vm.noResults = true;
+			}
+			else {
+				vm.success = true;
+			}
 			console.log(vm.results);
 		}, function(res){
 			console.log(res.error);
 		});
 	};
 
-
+	vm.noResults = false;
 	vm.results = [];
 	vm.searchTag = "";
 	vm.searching = false;

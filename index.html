@@ -19,6 +19,10 @@
 		<article id="message" ng-if="vm.success" ng-cloak>
 			<h3>We found {{vm.results.length}} results for "{{vm.currentTag}}"</h3>
 		</article>
+		<article id="message" ng-if="vm.noResults" ng-cloak>
+			<h3>Could not find any results for "{{vm.currentTag}}"</h3>
+		</article>
+
 
 	</section>
 	<section id="results" ng-if="vm.success" ng-cloak>
