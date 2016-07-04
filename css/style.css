@@ -16,6 +16,9 @@
 	height: 43vh;
 	vertical-align: top;
 	margin-bottom: 1em;
+	border-radius: 10px;
+	box-shadow: 10px -5px 5px black;
+	border: 1px solid black;
 }
 
 .photo.ng-move,
