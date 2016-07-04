@@ -33,6 +33,7 @@ app.controller("mainCtrl", function($http, $scope, $q, $timeout){
 			}
 			vm.searching = false;
 			vm.results = res.data.photos.photo;
+			vm.searchTag = "";
 			/*console.log(res);*/
 		}, function(res){
 			vm.failure = true;

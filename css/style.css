@@ -4,8 +4,9 @@
 }
 
 #container>h1 {
-	font-size: 3em;
+	font-size: 4vw;
 	margin-top: 3em;
+	margin-bottom: 0.3em;
 }
 
 .photo {
@@ -37,4 +38,8 @@
 .photo.ng-move.ng-move-active,
 .photo.ng-leave.ng-leave.active {
 	opacity: 1;
+}
+
+input[type=text], button {
+	font-size: 120%;
 }
